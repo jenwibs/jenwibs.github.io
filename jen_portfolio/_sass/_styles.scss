@@ -1,0 +1,50 @@
+
+/* For full-bleed sections with
+background colors and padding */
+
+.color-wrapper {
+	width: $color-width;
+  padding: 100px 0;
+  margin: auto 0;
+}
+
+.blue {
+  background: $blue;
+}
+
+
+.full-bleed-image {
+  img {
+    width: 100%;
+  }
+}
+
+.midsize-image {
+  max-width: 100%;
+  background: inherit;
+  margin: $spacing-unit auto;
+  text-align: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 700px) {
+    margin: $spacing-unit/2 auto;
+  }
+}
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    margin: 0 auto;
+    padding: 0 80px;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding: 0 $spacing-unit / 2;
+    }
+}
